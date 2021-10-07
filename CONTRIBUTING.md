@@ -15,7 +15,7 @@ If you would like to contribute this project please follow the following guideli
    - If the request is denied it will be labeled as "wontfix",
    - If the request is approved it will be labeled as "enhancement" and added dto the backlog to be worked on.  
    
-**For more information please see the README file.**
+> *For more information please see the README file.*
 
 ## OSS Policy
 
