@@ -1,29 +1,26 @@
+/*
+* **Copyright Regina Baher, 2021.**  
+* Licensed under MIT License.  
+* *Please see LICENSE for full license.* 
+*/
+"use strict";
+
 const functions = require("firebase-functions");
-const admin = require("firebase-admin");
+//const admin = require("firebase-admin");
 const express = require("express");
 const cors = require("cors");
+//const config = require("./config.js");
+const bodyParser = require("body-parser");
+
 const app = express();
 
 app.use(cors({origin: true}));
-const serviceAccount = require("../permissions.json");
+app.use(express.json());
+app.use(bodyParser.json());
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: process.env.DB_URL,
-});
+const eventRoutes = require("./routes/event-routes");
 
-const db = admin.firestore();
-
-
-app.get("/hello-world", (req, res) => {
-  functions.logger.info("Hello logs!", {structuredData: true});
-  return res.status(200).send("Hello World!");
-});
-
-
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
+app.use("/api", eventRoutes.routes);
 
 
 exports.app = functions.https.onRequest(app);
-//export {admin, db, app}
