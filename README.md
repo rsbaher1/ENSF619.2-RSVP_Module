@@ -11,17 +11,30 @@ NOTE: You will need a Google account to setup this project
 
 1. Local Machine Setup:
    - Clone the repository
-   - Install Node (and npm) version 14 LTS  
-		- I recommend using nvm (Node version management) it simplifies node development: `nvm install lts/fermium`, `nvm use lts/fermium`  
-   - Using npm install the following packages: firebase-functions, express, cors, firebase-admin.
-   - cd into the root folder then the functions folder and run `npm install`   
+   - Install Node version 16 LTS  
+		- I recommend using nvm (Node version management) it simplifies node development.
+		- *NOTE: npm is installed with Node, no further action needed*
+   - Install Postman or another system that allows you to send HTTP requests and view the responses.  		
 2. Firebase Setup:  
    - Login to the firebase website using your google account  
    - Create a new project by clicking the "Add Project" button and follow the prompts  
-   - Select the Firestore database from the menu on the left side and follow the prompts to create the database  
+   - Select the **Firestore database** from the menu on the left side and follow the prompts to create the database  
    - Go to the project settings, click the service accounts tab, then press the "Generate new private key" button to save your permissions file  
       - Please rename the downloaded file as "permissions.json" and save it in the root directory of the project. This file is used for authenticating your DB requests  
-   - create a `.env` in the root folder of the project and your DB URL: `DB_URL="<your db URL>"`  
+   - create a `.env` in the root folder of the project and add your DB URL: `DB_URL="<your db URL>"`  
+   - Now we are ready to initialize our DB  
+      - Open a terminal in the root of the project and run `firebase login` then `firebase init functions`   
+	  - You will be asked to associate the project with a Firebase project, select "Use existing Project" and follow the prompts  
+	  - Next you will be asked which language to use, select "Javascript"  
+	  - Then you will be asked about Eslint, type 'y' for yes.  
+	  - Lastly, you will be asked if you want to install dependancies, type 'y' for yes.  
+  - Then run `firebase init firestore` and use the default values.
+3. Initializing the Project:
+   - Using npm install the following packages: firebase-functions, firebase-admin, firebase-tools, firebaseui, express, cors, babel-eslint@8.2.6, eslint@4.19.1, body-parser, dotenv.  
+     - Install everything at once: `npm install dotenv body-parser firebase-functions express cors firebase-admin firebase-tools  babel-eslint@8.x eslint@4.x`  
+   - cd into the root folder then the functions folder and run `npm install`  
+   - TODO: Run `` to start the server.  
+   - TODO: In the test folder you can find Postman files, upload to your Postman App to ensure the module is working.   
 
 ---
 ### Licensing
