@@ -29,6 +29,7 @@ NOTE: You will need a Google account to setup this project
 	  - Then you will be asked about Eslint, type 'y' for yes.  
 	  - Lastly, you will be asked if you want to install dependancies, type 'y' for yes.  
   - Then run `firebase init firestore` and use the default values.
+  - add `  parser: "babel-eslint",` to the .eslintrc.js file
 3. Initializing the Project:
    - Using npm install the following packages: firebase-functions, firebase-admin, firebase-tools, firebaseui, express, cors, babel-eslint@8.2.6, eslint@4.19.1, body-parser, dotenv.  
      - Install everything at once: `npm install dotenv body-parser firebase-functions express cors firebase-admin firebase-tools  babel-eslint@8.x eslint@4.x`  
