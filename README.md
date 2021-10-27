@@ -34,7 +34,7 @@ NOTE: You will need a Google account to setup this project
   - add `  parser: "babel-eslint",` to the .eslintrc.js file
 3. Initializing the Project:
    - Using npm install the following packages: firebase-functions, firebase-admin, firebase-tools, firebaseui, express, cors, babel-eslint@8.2.6, eslint@4.19.1, body-parser, dotenv.  
-     - Install everything at once: `npm install dotenv body-parser firebase-functions express cors firebase-admin firebase-tools  babel-eslint@8.x eslint@4.x`  
+     - Install everything at once: `npm install dotenv body-parser firebase-functions express cors firebase-admin firebase-tools  babel-eslint@8 eslint@4.x`  
    - cd into the root folder then the functions folder and run `npm install`  
    - Run `npm run serve` to start the server.  
    - TODO: In the test folder you can find Postman files, upload to your Postman App to ensure the module is working.   
@@ -42,6 +42,9 @@ NOTE: You will need a Google account to setup this project
 ---  
 >  ### Contributing  
 >  Please see CONTRIBUTING.md for guidelines on contributing to this project, submitting feature requests, issues, and even suggestions on improving the README.md and CONTRIBUTING.md.  
----
+---  
+### Common Errors
+1. If you see an error while runing `npm run lint` or `npm run serve` saying babel-eslint cannot be found, please uninstall `eslint` and `babel-eslint` and reinstall them: `npm install babel-eslint@8 eslint@4.x`
+---  
 ### Licensing
 This project is licensed under the MIT license and is copyright Regina Baher. Please see LICENSE for the full license.

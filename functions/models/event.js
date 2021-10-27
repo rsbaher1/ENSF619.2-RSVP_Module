@@ -6,7 +6,7 @@
 "use strict";
 const IteneraryItem = require("./iteneraryItem");
 const crypto = require("crypto");
-const assert = require("assert");
+//const assert = require("assert");
 
 class Event{
 	constructor(title, date, descr, mealOptions=[], itenerary=[]) {
@@ -16,7 +16,7 @@ class Event{
 		this.descr = descr;
 
 		if(mealOptions){
-			assert(typeof mealOptions === Array, "Event 'mealOptions' should be an array of strings, received: "+mealOptions);
+			//assert(typeof mealOptions == Array, "Event 'mealOptions' should be an array of strings, received: "+mealOptions);
 			this.mealOptions = mealOptions
 		} else {
 			this.mealOptions = [];
@@ -36,11 +36,15 @@ class Event{
 	}
 
 	toJSON(){
+		let iteneraryJson = [];
+		for (let i in this.itenerary){
+			iteneraryJson.push(i.toJSON());
+		}
 		return {
 			"id": this.id,
 			"title": this.title,
 			"date": this.date,
-			"itenerary": this.itenerary.toJSON(),
+			"itenerary": iteneraryJson,
 			"mealOptions": this.mealOptions,
 		};
 	}
