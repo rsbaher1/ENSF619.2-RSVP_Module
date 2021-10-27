@@ -30,15 +30,12 @@ const EventSchema = {
 		}
 	}
 
-}
+};
 
 const GuestSchema = {
 	type: "object",
 	required: ["fullname", "email", "eventID"],
 	properties: {
-		id: {
-			type: "string"
-		},
 		invitationID: {
 			type: "string"
 		},
@@ -68,8 +65,8 @@ const GuestSchema = {
 		},
 		weddingPartyPosition: {
 			type: "string",
-			default: "NONE",
-			enum: ["BRIDESMAID", "GROOMSMEN", "JUNIOR-BRIDESMAID", "PARENT"]
+			default: 0,
+			enum: [0, 1, 2, 3, 4, 5, 6, 7]
 		},
 		rsvpStatus: {
 			type: "integer",
@@ -81,7 +78,7 @@ const GuestSchema = {
 		}
 	}
 
-}
+};
 
 /* TODO
 const IteneraryItemSchema = {
@@ -92,4 +89,4 @@ const IteneraryItemSchema = {
 	"addr": this.addr
 }*/
 
-export default {EventSchema, GuestSchema};
+module.exports = {EventSchema, GuestSchema};
