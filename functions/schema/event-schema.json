@@ -1,0 +1,47 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"type": "object",
+	"required": ["title", "date", "descr"],
+	"properties":
+	{
+		"id": {
+			"type": "string"
+		},
+		"title": {
+			"type": "string"
+		},
+		"date": {
+			"type": "string"
+		},
+		"itenerary": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"properties":{
+					"title":{
+						"type": "string"
+					},
+					"start":{
+						"type": "string"
+					},
+					"end":{
+						"type": "string"
+					},
+					"address": {
+						"type": "string"
+					}
+				},
+				"required": ["title", "start", "address"]
+			}
+		},
+		"mealOptions":{
+			"type": "array",
+			"items": {"type": "string"},
+			"default": []
+		  },
+		"descr": {
+			"type": "string"
+		}
+	}
+
+}
