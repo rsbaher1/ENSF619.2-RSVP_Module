@@ -1,0 +1,70 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema#",
+	"type": "object",
+	"required": [
+	  "fullname",
+	  "email",
+	  "eventID"
+	],
+	"properties": {
+	  "id": {
+		"type": "string"
+	  },
+	  "invitationID": {
+		"type": "string",
+		"default": ""
+	  },
+	  "eventID": {
+		"type": "string"
+	  },
+	  "fullname": {
+		"type": "string"
+	  },
+	  "email": {
+		"type": "string"
+	  },
+	  "isUnderage": {
+		"type": "integer",
+		"default": 0,
+		"enum": [
+		  0,
+		  1
+		]
+	  },
+	  "isUnder12": {
+		"type": "integer",
+		"default": 0,
+		"enum": [
+		  0,
+		  1
+		]
+	  },
+	  "weddingPartyPosition": {
+		"type": "string",
+		"default": "Guest",
+		"enum": [
+			"Guest",
+			"Maid of Honour",
+			"Best Man",
+			"Bridesmaid",
+			"Junior Bridesmaid",
+			"Ring Bearer",
+			"Flower Girl",
+			"Parent"
+		]
+	  },
+	  "rsvpStatus": {
+		"type": "integer",
+		"default": 0,
+		"enum": [
+		  0,
+		  1,
+		  2
+		]
+	  },
+	  "rsvpMeal": {
+		"type": "string",
+		"default": ""
+	  }
+	}
+  }

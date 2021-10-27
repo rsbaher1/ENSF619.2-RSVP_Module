@@ -7,38 +7,11 @@
 
 const express = require("express");
 const {addEvent, getAllEvents, getEventByID, getGuestList} = require("../controllers/eventController");
-const {Validator} = require("express-json-validator-middleware");
-const { validate } = new Validator();
 const router = express.Router();
+const validate = require("../validate");
+const EventSchema = require("../schema/event-schema.json");
 
-const EventSchema = {
-	type: "object",
-	required: ["title", "date", "descr"],
-	properties:
-	{
-		id: {
-			type: "string"
-		},
-		title: {
-			type: "string"
-		},
-		date: {
-			type: "string"
-		},
-		itenerary: {
-			type: "array",
-		},
-		mealOptions: {
-			type: "array"
-		},
-		descr: {
-			type: "string"
-		}
-	}
-
-};
-
-router.post("/event", validate(EventSchema), addEvent);
+router.post("/event", validate({ body: EventSchema}), addEvent);
 router.get("/event", getAllEvents);
 router.get("/event/:event_id", getEventByID);
 router.get("/event/:event_id/guestlist", getGuestList);
