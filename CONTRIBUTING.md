@@ -34,7 +34,7 @@
 - **Secure**: The module should be secure from online threats and only Users should have the ability to create events and guest lists, and only Guests should have the ability to send RSVP responses to events they are invited to. Guests cannot create or edit events nor guest lists for events.  
 
 
-## Contributing & Bug Reporting Guidelines  
+## Feature & Bug Reporting Guidelines  
 
 If you would like to contribute this project please follow the following guidelines:  
 
@@ -60,6 +60,21 @@ If you would like to contribute this project please follow the following guideli
    - Follow the same steps as above in #2 but instead of labeling the issue as a 'request' use 'documentation'  
    
 > *For more information please see the README file.*  
+   
+## Contributing   
+  
+After a Bug or Feature is processed it will be assigned to a developer.   
+A new branch will be automatically created.  
+Steps to follow:  
+- Checkout newly created branch
+- Complete any code and documentation changes
+- Run Postman to ensure there are no bugs
+- Commit and push your changes
+- Create a Pull request to the dev branch
+- Your changes will be review and if approved, merged into dev and the branch will be deleted.
+  - if changes require revisions, the required revisions will be commented on the pull request and the pull request will be closed. 
+  - Reopen the pull request once your revisions are added
+
 
 ---   
 

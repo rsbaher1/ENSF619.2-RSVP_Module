@@ -43,13 +43,20 @@ NOTE: You will need a Google account to setup this project
    - TODO: In the test folder you can find Postman files, upload them to your Postman App to ensure the module is working.   
 
 ---  
->  ### Contributing  
->  Please see CONTRIBUTING.md for guidelines on contributing to this project, submitting feature requests, issues, and even suggestions on improving the README.md and CONTRIBUTING.md.  
+### Testing
+Upload `firebase-api.postman_collection.json` to Postman.  
+Update the URL to your Firestore URL (Which can be found on your terminal after starting the server).  
+Follow the examples provided in Postman, and follow the JSON Schemas found in the folder `functions/schema`.  
+  
 ---  
 ### Common Errors
 1. If you see an error while running `npm run lint` or `npm run serve` saying babel-eslint cannot be found, please uninstall `eslint` and `babel-eslint` and reinstall them: `npm install babel-eslint@8 eslint@4.x`
 2. 	If when you run `npm run serve` to start the server, the **Functions emulator** starts but the **Firestore emulator** is not, please open a terminal in the root of the project and run the following command to start the **Firebase Emulator Suite**:
          `firebase emulators:start`
+
+---  
+>  ### Contributing  
+>  Please see CONTRIBUTING.md for guidelines on contributing to this project, submitting feature requests, issues, and even suggestions on improving the README.md and CONTRIBUTING.md.  
 ---  
 ### Licensing
 This project is licensed under the MIT license and is copyright Regina Baher. Please see LICENSE for the full license.

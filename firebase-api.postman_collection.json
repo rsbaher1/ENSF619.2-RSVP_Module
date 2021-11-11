@@ -1,0 +1,570 @@
+{
+	"info": {
+		"_postman_id": "bb7bf02e-850c-4788-a944-77c61c00bdfa",
+		"name": "firebase-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Localhost",
+			"item": [
+				{
+					"name": "Events",
+					"item": [
+						{
+							"name": "create event",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"title\": \"Another Event Title\",\n    \"date\": \"Jan 11, 2023\",\n    \"descr\": \"Another Event description here.\"\n}"
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5001/rsvp-module/us-central1/app/api/event",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5001",
+									"path": [
+										"rsvp-module",
+										"us-central1",
+										"app",
+										"api",
+										"event"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "read Event by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:5001/rsvp-module/us-central1/app/api/event/f3beb9ba-6d03-45db-a0e0-7ea9e859cf75/",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5001",
+									"path": [
+										"rsvp-module",
+										"us-central1",
+										"app",
+										"api",
+										"event",
+										"f3beb9ba-6d03-45db-a0e0-7ea9e859cf75",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "read all Events",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:5001/rsvp-module/us-central1/app/api/event",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5001",
+									"path": [
+										"rsvp-module",
+										"us-central1",
+										"app",
+										"api",
+										"event"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "read all Events",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://127.0.0.1:5001/rsvp-module/us-central1/app/api/event",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "5001",
+											"path": [
+												"rsvp-module",
+												"us-central1",
+												"app",
+												"api",
+												"event"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Express"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "content-length",
+											"value": "417"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"1a1-NtecjEqPGg7mu9CzHXTzuMGwYqo\""
+										},
+										{
+											"key": "date",
+											"value": "Wed, 27 Oct 2021 22:22:38 GMT"
+										},
+										{
+											"key": "connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "keep-alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"date\": \"June 1, 2022\",\n        \"itenerary\": [],\n        \"mealOptions\": [\n            \"Chicken\",\n            \"Fish\"\n        ],\n        \"title\": \"Event Title\",\n        \"id\": \"169eb04a-8c73-4772-bf1e-3df523c90b69\"\n    },\n    {\n        \"mealOptions\": [\n            \"Chicken\",\n            \"Beef\"\n        ],\n        \"itenerary\": [],\n        \"title\": \"Event Title\",\n        \"date\": \"June 11, 2023\",\n        \"id\": \"38303949-ab36-4337-84dd-fb762f7f856f\"\n    },\n    {\n        \"date\": \"June 10, 2023\",\n        \"id\": \"f3beb9ba-6d03-45db-a0e0-7ea9e859cf75\",\n        \"title\": \"Event Title\",\n        \"mealOptions\": [\n            \"Chicken\",\n            \"Beef\"\n        ],\n        \"itenerary\": []\n    }\n]"
+								}
+							]
+						},
+						{
+							"name": "update by id localhost",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"item\": \"this item has been updated\"\n}"
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5001/rsvp-module/us-central1/app/api/event",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5001",
+									"path": [
+										"rsvp-module",
+										"us-central1",
+										"app",
+										"api",
+										"event"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete event by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5001/rsvp-module/us-central1/app/api/event",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5001",
+									"path": [
+										"rsvp-module",
+										"us-central1",
+										"app",
+										"api",
+										"event"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "read all Guests",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:5001/rsvp-module/us-central1/app/api/event",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5001",
+									"path": [
+										"rsvp-module",
+										"us-central1",
+										"app",
+										"api",
+										"event"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Guests",
+					"item": [
+						{
+							"name": "create guest",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t  \"eventID\": \"1d05c79d-f5b5-4b0e-95cf-f9c22e30da74\",\n\t  \"fullname\": \"First4 Last1\",\n\t  \"email\": \"first4.last1@test.com\",\n      \"isUnderage\": 1,\n      \"isUnder12\": 0,\n      \"weddingPartyPosition\": \"Junior Bridesmaid\"\n}"
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5001/rsvp-module/us-central1/app/api/guest",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5001",
+									"path": [
+										"rsvp-module",
+										"us-central1",
+										"app",
+										"api",
+										"guest"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "read guest by id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:5001/rsvp-module/us-central1/app/api/guest/b6d1a7be-f635-42f3-913f-29d880599e9c",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5001",
+									"path": [
+										"rsvp-module",
+										"us-central1",
+										"app",
+										"api",
+										"guest",
+										"b6d1a7be-f635-42f3-913f-29d880599e9c"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "read all guests by event id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://127.0.0.1:5001/rsvp-module/us-central1/app/api/guest/event/1d05c79d-f5b5-4b0e-95cf-f9c22e30da74",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5001",
+									"path": [
+										"rsvp-module",
+										"us-central1",
+										"app",
+										"api",
+										"guest",
+										"event",
+										"1d05c79d-f5b5-4b0e-95cf-f9c22e30da74"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "read all guests by event id",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://127.0.0.1:5001/rsvp-module/us-central1/app/api/guest/event/1d05c79d-f5b5-4b0e-95cf-f9c22e30da74",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "5001",
+											"path": [
+												"rsvp-module",
+												"us-central1",
+												"app",
+												"api",
+												"guest",
+												"event",
+												"1d05c79d-f5b5-4b0e-95cf-f9c22e30da74"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Express"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "content-type",
+											"value": "application/json; charset=utf-8"
+										},
+										{
+											"key": "content-length",
+											"value": "1073"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"431-Q4MHGb1BFQp0SkZqOg8+61/pZ34\""
+										},
+										{
+											"key": "date",
+											"value": "Wed, 27 Oct 2021 23:13:09 GMT"
+										},
+										{
+											"key": "connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "keep-alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "[\n    {\n        \"id\": \"567f1b21-c070-4886-9773-bdcc20a22c01\",\n        \"rsvpMeal\": \"\",\n        \"isUnder12\": 1,\n        \"eventID\": \"1d05c79d-f5b5-4b0e-95cf-f9c22e30da74\",\n        \"isUnderage\": 1,\n        \"email\": \"first3.last1@test.com\",\n        \"fullname\": \"First3 Last1\",\n        \"weddingPartyPosition\": \"Junior Bridesmaid\",\n        \"rsvpStatus\": \"\",\n        \"invitationID\": \"\"\n    },\n    {\n        \"id\": \"75f36886-b4cb-40aa-aa3c-33e2b037fa91\",\n        \"isUnder12\": 0,\n        \"rsvpStatus\": \"\",\n        \"email\": \"first2.last1@test.com\",\n        \"weddingPartyPosition\": \"default\",\n        \"eventID\": \"1d05c79d-f5b5-4b0e-95cf-f9c22e30da74\",\n        \"isUnderage\": 0,\n        \"invitationID\": \"\",\n        \"fullname\": \"First2 Last1\",\n        \"rsvpMeal\": \"\"\n    },\n    {\n        \"id\": \"b6d1a7be-f635-42f3-913f-29d880599e9c\",\n        \"isUnder12\": 0,\n        \"isUnderage\": 1,\n        \"rsvpStatus\": \"\",\n        \"weddingPartyPosition\": \"Junior Bridesmaid\",\n        \"fullname\": \"First4 Last1\",\n        \"rsvpMeal\": \"\",\n        \"eventID\": \"1d05c79d-f5b5-4b0e-95cf-f9c22e30da74\",\n        \"email\": \"first4.last1@test.com\",\n        \"invitationID\": \"\"\n    },\n    {\n        \"isUnder12\": 0,\n        \"rsvpMeal\": \"\",\n        \"isUnderage\": 0,\n        \"id\": \"c385cc2b-df89-488d-bdab-23fe17f56e8c\",\n        \"fullname\": \"First1 Last1\",\n        \"email\": \"first1.last1@test.com\",\n        \"eventID\": \"1d05c79d-f5b5-4b0e-95cf-f9c22e30da74\",\n        \"invitationID\": \"\",\n        \"weddingPartyPosition\": \"default\",\n        \"rsvpStatus\": \"\"\n    }\n]"
+								},
+								{
+									"name": "read all guests by event id",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://127.0.0.1:5001/rsvp-module/us-central1/app/api/guest/event/f3beb9ba-6d03-45db-a0e0-7ea9e859cf75",
+											"protocol": "http",
+											"host": [
+												"127",
+												"0",
+												"0",
+												"1"
+											],
+											"port": "5001",
+											"path": [
+												"rsvp-module",
+												"us-central1",
+												"app",
+												"api",
+												"guest",
+												"event",
+												"f3beb9ba-6d03-45db-a0e0-7ea9e859cf75"
+											]
+										}
+									},
+									"status": "Not Found",
+									"code": 404,
+									"_postman_previewlanguage": "html",
+									"header": [
+										{
+											"key": "x-powered-by",
+											"value": "Express"
+										},
+										{
+											"key": "vary",
+											"value": "Origin"
+										},
+										{
+											"key": "content-type",
+											"value": "text/html; charset=utf-8"
+										},
+										{
+											"key": "content-length",
+											"value": "72"
+										},
+										{
+											"key": "etag",
+											"value": "W/\"48-gQv9DNyL6hY/oKO0RLbYOtFQWC0\""
+										},
+										{
+											"key": "date",
+											"value": "Wed, 27 Oct 2021 23:14:15 GMT"
+										},
+										{
+											"key": "connection",
+											"value": "keep-alive"
+										},
+										{
+											"key": "keep-alive",
+											"value": "timeout=5"
+										}
+									],
+									"cookie": [],
+									"body": "No document found by that Event ID: f3beb9ba-6d03-45db-a0e0-7ea9e859cf75"
+								}
+							]
+						},
+						{
+							"name": "update Guest by id",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"name": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"item\": \"this item has been updated\"\n}"
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5001/rsvp-module/us-central1/app/api/event",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5001",
+									"path": [
+										"rsvp-module",
+										"us-central1",
+										"app",
+										"api",
+										"event"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete Guest by id",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "http://127.0.0.1:5001/rsvp-module/us-central1/app/api/event",
+									"protocol": "http",
+									"host": [
+										"127",
+										"0",
+										"0",
+										"1"
+									],
+									"port": "5001",
+									"path": [
+										"rsvp-module",
+										"us-central1",
+										"app",
+										"api",
+										"event"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			],
+			"description": "This folder contains tests for running on localhost. Please change the URL to your own testing URL from Firestore."
+		},
+		{
+			"name": "deployed",
+			"item": []
+		}
+	]
+}
