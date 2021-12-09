@@ -19,8 +19,12 @@ const crypto = require("crypto");
 class Guest{
  
 	// TODO: add Table number field
-	constructor(eventID, fullname, email, isUnderage=0, isUnder12=0, weddingPartyPosition="Guest", invitationID="", rsvpStatus="", rsvpMeal="") {
-		this.id= crypto.randomUUID();
+	constructor(eventID, fullname, email, isUnderage=0, isUnder12=0, weddingPartyPosition="Guest", invitationID="", rsvpStatus="", rsvpMeal="", id=null) {
+		if(id == null){
+			this.id= crypto.randomUUID();
+		} else {
+			this.id = id;
+		}
 		this.eventID = eventID;
 		this.fullname = fullname; 
 		this.email = email; // to send invitiation

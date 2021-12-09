@@ -10,7 +10,8 @@
 //const functions = require("firebase-functions");
 const admin = require("firebase-admin");
 const config = require("./config.js");
-const serviceAccount = require(config.PERMISSIONS);
+//const serviceAccount = require(config.PERMISSIONS);
+const serviceAccount = JSON.parse(config.FULL_CREDENTIALS);
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),

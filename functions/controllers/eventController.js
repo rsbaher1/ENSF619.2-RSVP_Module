@@ -14,11 +14,27 @@ const addEvent = async (req, res) => {
 	try {
 		let data = req.body;
 
-		let eventModel = new Event(data.title, data.date, data.descr, data.mealOptions, data.itenerary);
+		let eventModel = new Event(data.title, data.date, data.descr, data.mealOptions, data.itenerary, null);
 		let event_data = await Event_Collection.doc(eventModel.id).set(eventModel.toJSON());
 
 		functions.logger.log("event data:", event_data);
 		res.status(200).send("Successfully created Event: " + eventModel.id);
+	} catch (e) {
+		functions.logger.log("Error:", e);
+		res.status(400).send(e.message);
+	}
+}
+
+const updateEvent = async (req, res) => {
+	try {
+		const eventID = req.params.event_id;
+		let data = req.body;
+
+		let eventModel = new Event(data.title, data.date, data.descr, data.mealOptions, data.itenerary, eventID);
+		let event_data = await Event_Collection.doc(eventModel.id).update(eventModel.toJSON());
+
+		functions.logger.log("event data updated:", event_data);
+		res.status(200).send("Successfully Updated Event: " + eventModel.id);
 	} catch (e) {
 		functions.logger.log("Error:", e);
 		res.status(400).send(e.message);
@@ -89,4 +105,5 @@ module.exports = {
 	getAllEvents,
 	getEventByID,
 	getGuestList,
+	updateEvent,
 }
