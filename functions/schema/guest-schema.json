@@ -64,6 +64,10 @@
 	  "rsvpMeal": {
 		"type": "string",
 		"default": ""
+	  },
+	  "hotelRooms": {
+		"type": "integer",
+		"default": 0
 	  }
 	}
   }

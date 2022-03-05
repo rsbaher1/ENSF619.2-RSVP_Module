@@ -8,7 +8,6 @@
 const functions = require("firebase-functions");
 const express = require("express");
 const cors = require("cors");
-const bodyParser = require("body-parser");
 const {ValidationError} = require("express-json-validator-middleware");
 
 function validationErrorMiddleware(error, request, response, next) {
@@ -32,13 +31,16 @@ const app = express();
 
 app.use(cors({origin: true}));
 app.use(express.json());
-app.use(bodyParser.json());
 app.use(validationErrorMiddleware);
 
 const eventRoutes = require("./routes/event-routes");
 const guestRoutes = require("./routes/guest-routes");
+const emailCodeRoutes = require("./routes/emailCode-routes");
+const authRoutes = require("./routes/auth-routes");
 
 app.use("/api", eventRoutes.routes);
 app.use("/api", guestRoutes.routes);
+app.use("/api", emailCodeRoutes.routes);
+app.use("/api", authRoutes.routes);
 
 exports.app = functions.https.onRequest(app);

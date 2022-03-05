@@ -19,7 +19,7 @@ const crypto = require("crypto");
 class Guest{
  
 	// TODO: add Table number field
-	constructor(eventID, fullname, email, isUnderage=0, isUnder12=0, weddingPartyPosition="Guest", invitationID="", rsvpStatus="", rsvpMeal="", id=null) {
+	constructor(eventID, fullname, email, isUnderage=0, isUnder12=0, weddingPartyPosition="Guest", invitationID="", rsvpStatus="", rsvpMeal="", hotel=0, id=null) {
 		if(id == null){
 			this.id= crypto.randomUUID();
 		} else {
@@ -34,6 +34,7 @@ class Guest{
 		this.invitationID = invitationID; //For invitation organizing
 		this.rsvpStatus = rsvpStatus;
 		this.rsvpMeal = rsvpMeal;
+		this.hotelRooms = hotel;
 	}
 
 	toJSON(){
@@ -47,7 +48,8 @@ class Guest{
 			"isUnder12": this.isUnder12,
 			"weddingPartyPosition": this.weddingPartyPosition,
 			"rsvpStatus": this.rsvpStatus,
-			"rsvpMeal": this.rsvpMeal
+			"rsvpMeal": this.rsvpMeal,
+			"hotelRooms": this.hotelRooms
 		};
 	}
 }
