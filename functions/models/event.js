@@ -9,8 +9,13 @@ const crypto = require("crypto");
 //const assert = require("assert");
 
 class Event{
-	constructor(title, date, descr, mealOptions=[], itenerary=[]) {
-		this.id= crypto.randomUUID();
+	constructor(title, date, descr, mealOptions=[], itenerary=[], id=null) {
+		if (id == null) {
+			this.id= crypto.randomUUID();
+		} else {
+			this.id = id;
+		}
+		
 		this.title = title; 
 		this.date = date;
 		this.descr = descr;

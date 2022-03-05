@@ -58,13 +58,16 @@
 		"default": 0,
 		"enum": [
 		  0,
-		  1,
-		  2
+		  1
 		]
 	  },
 	  "rsvpMeal": {
 		"type": "string",
 		"default": ""
+	  },
+	  "hotelRooms": {
+		"type": "integer",
+		"default": 0
 	  }
 	}
   }
