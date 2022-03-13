@@ -12,7 +12,7 @@ dotenv.config();
 
 const { DB_URL, PERMISSIONS, TYPE, PROJECT_ID, PRIVATE_KEY_ID,
   PRIVATE_KEY, CLIENT_EMAIL, CLIENT_ID, AUTH_URI, TOKEN_URI,
-  AUTH_PROVIDER_X509_CERT_URL, CLIENT_X509_CERT_URL
+  AUTH_PROVIDER_X509_CERT_URL, CLIENT_X509_CERT_URL, SignIn_URI
 } = process.env;
 
 assert(DB_URL, "Firebase DB URL is required.");
@@ -27,6 +27,7 @@ assert(AUTH_URI, "Firebase AUTH_URI is required.");
 assert(TOKEN_URI, "Firebase TOKEN_URI is required.");
 assert(AUTH_PROVIDER_X509_CERT_URL, "Firebase AUTH_PROVIDER_X509_CERT_URL is required.");
 assert(CLIENT_X509_CERT_URL, "Firebase CLIENT_X509_CERT_URL is required.");
+assert(SignIn_URI, "Firebase SignIn_URI is required.");
 
 const full_cred = JSON.stringify({
   "type": TYPE,
@@ -44,5 +45,6 @@ const full_cred = JSON.stringify({
 module.exports = {
   DB_URL: DB_URL,
   PERMISSIONS: PERMISSIONS,
-  FULL_CREDENTIALS: full_cred
+  FULL_CREDENTIALS: full_cred,
+  SignIn_URI: SignIn_URI
 }
